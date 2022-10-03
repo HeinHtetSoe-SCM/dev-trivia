@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('v1')->group(function () {
+    Route::resource('/quiz', 'App\Http\Controllers\QuizController');
+    Route::get('/post/create', 'Post\PostController@showPostCreateView')->name('create.post');
+    Route::post('/quiz',[QuizController::class, 'store']);
+});

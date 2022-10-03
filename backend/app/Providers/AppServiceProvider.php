@@ -14,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind('App\Contracts\Services\QuizServiceInterface', 'App\Services\QuizService');
+        $this->app->bind('App\Contracts\Dao\QuizDaoInterface', 'App\Dao\QuizDao');
     }
 
     /**
