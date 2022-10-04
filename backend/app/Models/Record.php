@@ -1,21 +1,17 @@
 <?php
+
 namespace App\Models;
 
-use Franzose\ClosureTable\Models\Entity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Record extends Entity
+class Record extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+    use HasFactory;
+
     protected $table = 'records';
 
-    /**
-     * ClosureTable model instance.
-     *
-     * @var \App\RecordClosure
-     */
-    protected $closure = 'App\Models\RecordClosure';
+    protected $fillable = [
+        'answer'
+    ];
 }
